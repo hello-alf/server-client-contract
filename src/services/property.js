@@ -23,6 +23,22 @@ class PropertyService {
         throw new Error(error);
       });
   };
+
+  createProperty = (payload) => {
+    return axios
+      .post(`${this.url}/property`, payload, {
+        headers: {
+          Accept: "application/json",
+        },
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+        throw new Error(error);
+      });
+  };
 }
 
 module.exports = PropertyService;

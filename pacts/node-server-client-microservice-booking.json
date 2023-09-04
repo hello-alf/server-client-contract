@@ -4,6 +4,51 @@
   },
   "interactions": [
     {
+      "description": "Crear propiedad",
+      "providerStates": [
+        {
+          "name": "crear propiedad"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Departamento en Sopocachi",
+          "pricePerNight": 125
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/property"
+      },
+      "response": {
+        "body": {
+          "name": "Departamento en Sopocachi",
+          "pricePerNight": {
+            "value": 125
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
+        },
+        "status": 200
+      }
+    },
+    {
       "description": "listar todas las propiedades",
       "providerStates": [
         {
@@ -40,6 +85,51 @@
         ],
         "headers": {
           "Content-Type": "application/json"
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "Crear propiedad",
+      "providerStates": [
+        {
+          "name": "crear propiedad"
+        }
+      ],
+      "request": {
+        "body": {
+          "name": "Departamento en Sopocachi",
+          "pricePerNight": 125
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/property"
+      },
+      "response": {
+        "body": {
+          "name": "Departamento en Sopocachi",
+          "pricePerNight": {
+            "value": 125
+          }
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {}
         },
         "status": 200
       }

@@ -19,6 +19,20 @@ const listAllResponse = [
   },
 ];
 
+const createPropertyRequest = {
+  name: "Departamento en Sopocachi",
+  pricePerNight: 125,
+};
+
+const createPropertyResponse = {
+  name: "Departamento en Sopocachi",
+  pricePerNight: {
+    value: 125,
+  },
+};
+
 module.exports = {
   listAllResponse,
+  createPropertyRequest,
+  createPropertyResponse,
 };
