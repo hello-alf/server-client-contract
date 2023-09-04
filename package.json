@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha test/contract-test/consumer/PropertyService.spec.js"
+    "test": "mocha test/contract-test/**/*.spec.js"
   },
   "author": "",
   "license": "ISC",

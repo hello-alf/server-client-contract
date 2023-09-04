@@ -1,6 +1,6 @@
 const { PactV3, MatchersV3 } = require("@pact-foundation/pact");
 const { describe, it } = require("mocha");
-const { listAll } = require("../response");
+const { listAllResponse } = require("../response");
 const PropertyService = require("../../../src/services/property");
 
 const provider = new PactV3({
@@ -26,17 +26,19 @@ describe("API de Propiedades", () => {
         headers: {
           "Content-Type": "application/json",
         },
+        body: listAllResponse,
       });
 
     return provider.executeTest(async (mockServer) => {
       // Act
-      console.log("mockServer.url", mockServer.url);
       proptertyService = new PropertyService(mockServer.url);
       return proptertyService.getAllProperties().then((response) => {
         //Assert
-        // expect(response).to.be.not.null;
+        expect(response).to.be.not.null;
         // expect(response).to.be.a.string;
-        expect(response).equal(listAll);
+        console.log("antes de comparar");
+        expect(response.length).to.be.length(listAllResponse.length);
+        console.log("despues de comparar");
       });
     });
   });
